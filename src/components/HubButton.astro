@@ -1,10 +1,32 @@
 ---
 const { hubItem } = Astro.props;
 const Icon = hubItem.social;
+
+const displaySoon = hubItem.url == "#";
 ---
 
 <div class="button">
-    <a href={hubItem.url} target="_blank" rel="noopener noreferrer">
-        <Icon size={30} />
-    </a>
+    {
+        (() => {
+            if (displaySoon) {
+                return (
+                    <a>
+                        <Icon size={28} />
+                        <p>{hubItem.title}</p>
+                    </a>
+                );
+            } else {
+                return (
+                    <a
+                        href={hubItem.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Icon size={28} />
+                        <p>{hubItem.title}</p>
+                    </a>
+                );
+            }
+        })()
+    }
 </div>

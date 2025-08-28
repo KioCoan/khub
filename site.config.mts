@@ -1,5 +1,5 @@
 import type { HubItem } from './src/data/hubItem.ts';
-import { Camera, Github, Instagram, Linkedin, X } from 'lucide-astro';
+import { LaptopMinimal, Camera, Github, Instagram, Linkedin, X } from 'lucide-astro';
 
 export default {
     title: 'KioHub',
@@ -7,7 +7,12 @@ export default {
     owner: 'Kio',
     hubItems: [
         {
-            title: "Kioart",
+            title: "Portfolio (soon)",
+            url: "#",
+            social: LaptopMinimal
+        } as unknown as HubItem,
+        {
+            title: "Kio.art",
             url: 'https://kio.art',
             social: Camera
         } as unknown as HubItem,
@@ -17,17 +22,17 @@ export default {
             social: Github
         } as unknown as HubItem,
         {
-            title: 'Instagram',
+            title: "Instagram",
             url: 'https://www.instagram.com/kiocoan',
             social: Instagram,
         } as unknown as HubItem,
         {
-            title: 'LinkedIn',
+            title: "LinkedIn",
             url: 'https://www.linkedin.com/in/caiocoan/',
             social: Linkedin,
         } as unknown as HubItem,
         {
-            title: "X",
+            title: "X / Twitter",
             url: "https://x.com/oTalDoCodaFofo",
             social: X
         } as unknown as HubItem,
