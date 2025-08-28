@@ -16,17 +16,17 @@ services:
         - traefik.enable=true
 
         # Primary HTTPS router
-        - traefik.http.routers.kioart.rule=Host(`0xkio.com`)
-        - traefik.http.routers.kioart.entrypoints=websecure
-        - traefik.http.routers.kioart.tls=true
-        - traefik.http.routers.kioart.tls.certresolver=le
+        - traefik.http.routers.khub.rule=Host(`0xkio.com`)
+        - traefik.http.routers.khub.entrypoints=websecure
+        - traefik.http.routers.khub.tls=true
+        - traefik.http.routers.khub.tls.certresolver=le
 
         # Service port inside the container
-        - traefik.http.services.kioart.loadbalancer.server.port=8080
+        - traefik.http.services.khub.loadbalancer.server.port=8080
 
         # Optional: redirect www -> apex
-        - traefik.http.routers.kioart-www.rule=Host(`0xkio.com`)
-        - traefik.http.routers.kioart-www.entrypoints=web
-        - traefik.http.routers.kioart-www.middlewares=kioart-to-apex
-        - traefik.http.middlewares.kioart-to-apex.redirectregex.regex=^https?://0xkio\.com/(.*)
-        - traefik.http.middlewares.kioart-to-apex.redirectregex.replacement=https://0xkio.com/$$1
+        - traefik.http.routers.khub-www.rule=Host(`0xkio.com`)
+        - traefik.http.routers.khub-www.entrypoints=web
+        - traefik.http.routers.khub-www.middlewares=khub-to-apex
+        - traefik.http.middlewares.khub-to-apex.redirectregex.regex=^https?://0xkio\.com/(.*)
+        - traefik.http.middlewares.khub-to-apex.redirectregex.replacement=https://0xkio.com/$$1
