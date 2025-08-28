@@ -3,7 +3,7 @@ name: build-and-deploy
 on:
   push:
     tags:
-      - 'v*-khub'   # e.g., v1.0.0
+      - 'v*'   # e.g., v1.0.0
 
 permissions:
   contents: read
