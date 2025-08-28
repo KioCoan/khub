@@ -1,0 +1,16 @@
+---
+import type { HubItem } from "../data/hubItem";
+import HubButton from "../components/HubButton.astro";
+
+interface Props {
+    items: HubItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div id="container" class="flex flex-col text-neutral-50 text-center">
+    <h1>My stuff</h1>
+    <br />
+    {items.map((item) => <HubButton hubItem={item} />)}
+</div>

@@ -1,0 +1,10 @@
+---
+const { hubItem } = Astro.props;
+const Icon = hubItem.social;
+---
+
+<div class="button">
+    <a href={hubItem.url} target="_blank" rel="noopener noreferrer">
+        <Icon size={30} />
+    </a>
+</div>
